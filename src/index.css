@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+.LeftBox {
+    background-image: url(weather.jpeg);
+    background-size: cover;
+    background-position: center;
+}
