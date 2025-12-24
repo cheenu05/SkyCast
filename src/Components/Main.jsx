@@ -1,12 +1,64 @@
 import React from 'react'
+import {
+    WiDaySunny,
+    WiNightClear,
+    WiCloudy,
+    WiRain,
+    WiFog,
+    WiSnow,
+    WiThunderstorm
+} from "react-icons/wi";
+import { CiLocationOn } from "react-icons/ci";
+import { useEffect, useState } from 'react';
+
+
+
 
 const Main = () => {
+    const [inputValue, setInputValue] = useState('');
+    const [location, setLocation] = React.useState("London");
+
+    const handelSubmit = (dets) => {
+        dets.preventDefault();
+        setLocation(inputValue);
+        setInputValue('');
+
+    }
+
+    const weatherIconMap = {
+        "01d": WiDaySunny,
+        "01n": WiNightClear,
+
+        "02d": WiCloudy,
+        "02n": WiCloudy,
+        "03d": WiCloudy,
+        "03n": WiCloudy,
+        "04d": WiCloudy,
+        "04n": WiCloudy,
+
+        "09d": WiRain,
+        "09n": WiRain,
+        "10d": WiRain,
+        "10n": WiRain,
+
+        "11d": WiThunderstorm,
+        "11n": WiThunderstorm,
+
+        "13d": WiSnow,
+        "13n": WiSnow,
+
+        "50d": WiFog,
+        "50n": WiFog
+    };
+
+
+
+
     return (
         <>
-        <hr className='text-white ' />
+            <hr className='text-white ' />
             <div className="main-container w-full h-screen bg-gray-800 flex  justify-center  ">
 
-                
 
                 {/* Left Box Start */}
 
@@ -15,7 +67,7 @@ const Main = () => {
                     <div>
                         <h2 className='text-black text-4xl font-serif'> Tuesday </h2>
                         <h3 className='text-black font-sans'> 24 Dec 2025 </h3>
-                        <h3 className='text-black font-serif'> Location </h3>
+                        <h3 className='text-black font-serif'> {location} </h3>
                     </div>
 
                     <div>
@@ -32,13 +84,13 @@ const Main = () => {
 
                 {/* right box start */}
 
-                <div className="RightBox bg-gray-900 mt-20 p-4 h-100 w-100 rounded-r-4xl hover:scale-105 duration-300  hover:border-l-2 hover:border-gray-400 hover:rounded-3xl">
+                <div className="RightBox bg-gray-900 mt-20 p-4 h-100 w-100 rounded-r-4xl hover:scale-105 duration-300  hover:border-l-2 hover:border-gray-400 hover:rounded-3xl ">
 
                     {/* box1 start */}
 
                     <div className='Box1 mt-2 hover:cursor-pointer'>
 
-                        <div className='Box1-1 flex justify-between'>
+                        <div className='Box1-1 flex justify-between '>
 
                             < h2 className='text-white text-xl font-serif pl-3  mb-1 hover:underline' > Humidity </h2 >
                             < h3 className='text-white text-lg font-sans pr-3' > 78% </h3 >
@@ -84,7 +136,7 @@ const Main = () => {
                                 <li>day</li>
                                 <li>temp</li>
                             </ul>
-                            
+
 
                         </div>
 
@@ -120,16 +172,28 @@ const Main = () => {
 
                     </div>
 
-                    <div className='Box3'>
 
-                        <input
+                    <div className='Box3  mt-2 flex justify-evenly gap-4 p-2 bg-gray-800 rounded-lg hover:cursor-pointer hover:bg-gray-700 '>
 
-                            type="search"
-                            name=""
-                            id=""
-                            placeholder='Change Location'
-                            className='mt-7 p-2 w-full rounded-lg text-white'
-                        />
+                        <CiLocationOn className='text-white mt-2 ' />
+
+                        <form onSubmit={handelSubmit}>
+                            <input
+
+                                type="text"
+                                value={inputValue}
+                                placeholder='change location'
+                                className='outline-hidden text-white'
+                                onChange={(dets) => { setInputValue(dets.target.value) }}
+                            />
+
+                            <input
+                                type="Submit"
+                                className='text-white h-8 w-15 border border-blue-300 bg-emerald-600 hover:bg-emerald-800 cursor-pointer rounded-lg'
+                            />
+
+
+                        </form>
 
 
                     </div>
@@ -138,6 +202,9 @@ const Main = () => {
                 </div>
 
             </div>
+
+
+
         </>
     )
 }
