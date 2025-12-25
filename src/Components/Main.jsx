@@ -11,6 +11,8 @@ import {
 import { CiLocationOn } from "react-icons/ci";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import WeatherImg from "../Assets/WeatherImg.jpeg";
+
 
 
 
@@ -148,12 +150,17 @@ const Main = () => {
 
                 {/* Left Box Start */}
 
-                <div className="LeftBox  bg-gray-900  sm:mt-20 p-8 w-115 sm:h-100 sm:w-100 sm:rounded-4xl  hover:border-r-2 border-gray-400 hover:scale-105 duration-300 hover:cursor-pointer hover:border-gray-400 hover:rounded-3xl flex sm:flex-col justify-between ">
+                <div className="LeftBox  bg-gray-900  sm:mt-20 p-8 w-115 sm:h-100 sm:w-100 sm:rounded-4xl  hover:border-r-2 border-gray-400 hover:scale-105 duration-300 hover:cursor-pointer hover:border-gray-400 hover:rounded-3xl flex sm:flex-col justify-between "
+                    style={{
+                        backgroundImage: `url(${WeatherImg})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}>
 
                     <div>
-                        <h2 className='text-white mt-5 sm:mt-0 text-4xl font-serif'> {currentDay} </h2>
-                        <h3 className='text-white font-sans'> {currentDate} </h3>
-                        <h3 className='text-white font-serif capitalize'> {location} </h3>
+                        <h2 className='text-black mt-5 sm:mt-0 text-4xl font-serif'> {currentDay} </h2>
+                        <h3 className='text-black font-sans'> {currentDate} </h3>
+                        <h3 className='text-black font-serif capitalize'> {location} </h3>
                     </div>
 
                     {currentWeather && (
