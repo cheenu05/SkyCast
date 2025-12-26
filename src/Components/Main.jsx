@@ -103,7 +103,7 @@ const Main = () => {
 
                 const forecast = forecastRes.data.list
                     .filter(item => item.dt_txt.includes("12:00:00"))
-                    .slice(0, 4)
+                    .slice(1, 5)
                     .map(item => ({
                         day: getDayName(item.dt_txt),
                         temp: Math.round(item.main.temp),
@@ -144,13 +144,13 @@ const Main = () => {
 
             <p className=' font-bold sm:text-xl text-[12px] text-center'>The Data of Air Quality Start from 1 - 5 Range 1 :Good , 5 : Very Poor ☠️ </p>
             <hr className='text-white ' />
-            <div className="main-container w-full h-screen  bg-gray-800  sm:flex  justify-center  p-5 sm:p-0 ">
+            <div className="main-container w-full h-screen  bg-gray-800  sm:flex  justify-center  p-4 sm:p-0 ">
 
 
 
                 {/* Left Box Start */}
 
-                <div className="LeftBox  bg-gray-900  sm:mt-20 p-8 w-115 sm:h-100 sm:w-100 sm:rounded-4xl  hover:border-r-2 border-gray-400 hover:scale-105 duration-300 hover:cursor-pointer hover:border-gray-400 hover:rounded-3xl flex sm:flex-col justify-between "
+                <div className="LeftBox  bg-gray-900  sm:mt-20 p-8  sm:h-100 sm:w-100 sm:rounded-4xl  hover:border-r-2 border-gray-400 hover:scale-105 duration-300 hover:cursor-pointer hover:border-gray-400 hover:rounded-3xl flex sm:flex-col justify-between "
                     style={{
                         backgroundImage: `url(${WeatherImg})`,
                         backgroundSize: "cover",
@@ -177,7 +177,7 @@ const Main = () => {
 
                 {/* right box start */}
 
-                <div className="RightBox bg-gray-900 sm:mt-20 p-4 h-100 w-115 sm:rounded-4xl hover:scale-105 duration-300  hover:border-l-2 hover:border-gray-400 hover:rounded-3xl ">
+                <div className="RightBox bg-gray-900 sm:mt-20 p-4 sm:h-100 sm:w-100 sm:rounded-4xl hover:scale-105 duration-300  hover:border-l-2 hover:border-gray-400 hover:rounded-3xl ">
 
                     {/* box1 start */}
                     {currentWeather && (
@@ -185,33 +185,33 @@ const Main = () => {
 
                             <div className='Box1-1 flex justify-between '>
 
-                                < h2 className='text-white text-xl font-serif pl-3  mb-1 hover:underline' > Humidity </h2 >
+                                < h2 className='text-white text-xl font-serif pl-3  mb-1 ' > Humidity </h2 >
                                 < h3 className='text-white text-lg font-sans pr-3' > {currentWeather.humidity}% </h3 >
 
                             </div>
 
                             <div className='Box1-2 flex justify-between'>
 
-                                < h2 className='text-white text-xl font-serif pl-3  mb-1 hover:underline' > Air Quality </h2 >
+                                < h2 className='text-white text-xl font-serif pl-3  mb-1 ' > Air Quality </h2 >
                                 < h3 className='text-white text-lg font-sans pr-3' > {currentWeather.aqi} </h3 >
 
                             </div>
 
                             <div className='Box1-3 flex justify-between'>
 
-                                < h2 className='text-white text-xl font-serif pl-3  mb-1 hover:underline' > Wind </h2 >
+                                < h2 className='text-white text-xl font-serif pl-3  mb-1 ' > Wind </h2 >
                                 < h3 className='text-white text-lg font-sans pr-3' > {currentWeather.wind} km/h </h3 >
 
                             </div>
                             <div className='Box1-4 flex justify-between'>
 
-                                < h2 className='text-white text-xl font-serif pl-3  mb-1 hover:underline' > Sun-Rise </h2 >
+                                < h2 className='text-white text-xl font-serif pl-3  mb-1 ' > Sun-Rise </h2 >
                                 < h3 className='text-white text-lg font-sans pr-3' > {formatTime(currentWeather.sunrise)} </h3 >
 
                             </div>
                             <div className='Box1-5 flex justify-between'>
 
-                                < h2 className='text-white text-xl font-serif pl-3  mb-1 hover:underline' > Sun-Set </h2 >
+                                < h2 className='text-white text-xl font-serif pl-3  mb-1 ' > Sun-Set </h2 >
                                 < h3 className='text-white text-lg font-sans pr-3' > {formatTime(currentWeather.sunset)}  </h3 >
 
                             </div>
