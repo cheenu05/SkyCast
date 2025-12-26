@@ -249,9 +249,9 @@ const Main = () => {
 
 
                     {/*  Location search  */}
-                    <div className='Box3  mt-2 flex justify-evenly gap-4 p-2 bg-gray-800 rounded-lg hover:cursor-pointer hover:bg-gray-700 '>
+                    <div className='Box3  mt-2 flex justify-evenly  p-2 bg-gray-800 rounded-lg hover:cursor-pointer hover:bg-gray-700 '>
 
-                        <CiLocationOn className='text-white mt-2 ' />
+                        <CiLocationOn className='text-white mt-1.5 ' />
 
                         <form onSubmit={handelSubmit}>
                             <input
@@ -265,7 +265,7 @@ const Main = () => {
 
                             <input
                                 type="Submit"
-                                className='text-white h-8 w-15 border border-blue-300 bg-emerald-600 hover:bg-emerald-800 cursor-pointer rounded-lg'
+                                className='text-white h-7 w-15 border border-blue-300 bg-emerald-600 hover:bg-emerald-800 cursor-pointer rounded-lg'
                             />
 
 
