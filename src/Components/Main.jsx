@@ -144,7 +144,7 @@ const Main = () => {
 
             <p className=' font-bold sm:text-xl text-[12px] text-center'>The Data of Air Quality Start from 1 - 5 Range 1 :Good , 5 : Very Poor ☠️ </p>
             <hr className='text-white ' />
-            <div className="main-container w-full h-screen  bg-gray-800  sm:flex  justify-center  p-4 sm:p-0 ">
+            <div className="main-container w-full h-180  bg-gray-800  sm:flex  justify-center  p-4 sm:p-0 ">
 
 
 
@@ -249,23 +249,23 @@ const Main = () => {
 
 
                     {/*  Location search  */}
-                    <div className='Box3  mt-2 flex justify-evenly  p-2 bg-gray-800 rounded-lg hover:cursor-pointer hover:bg-gray-700 '>
+                    <div className='Box3 gap-2 sm:gap-8 mt-2 flex  p-2 bg-gray-800 rounded-lg hover:cursor-pointer hover:bg-gray-700 '>
 
-                        <CiLocationOn className='text-white mt-1.5 ' />
+                        <CiLocationOn className='text-white mt-1 ' />
 
-                        <form onSubmit={handelSubmit}>
+                        <form onSubmit={handelSubmit} className='flex '>
                             <input
 
                                 type="text"
                                 value={inputValue}
                                 placeholder='change location'
-                                className='outline-hidden text-white'
+                                className='outline-hidden text-white w-50'
                                 onChange={(dets) => { setInputValue(dets.target.value) }}
                             />
 
                             <input
                                 type="Submit"
-                                className='text-white h-7 w-15 border border-blue-300 bg-emerald-600 hover:bg-emerald-800 cursor-pointer rounded-lg'
+                                className='text-white w-15 border border-blue-300 bg-emerald-600 hover:bg-emerald-800 cursor-pointer rounded-lg'
                             />
 
 
@@ -277,9 +277,8 @@ const Main = () => {
 
                 </div>
 
+
             </div>
-
-
 
         </>
     )
